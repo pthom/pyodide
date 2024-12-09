@@ -1,0 +1,9 @@
+package:
+  name: imgui_bundle
+  version: 1.6.1
+  top-level:
+    - imgui_bundle
+
+source:
+  url: https://github.com/pthom/imgui_bundle/releases/download/v1.6.1/imgui_bundle-v1.6.1-pyodide.tgz
+  sha256: 7204ba4d1e7584dc632cc56874ddf12a08571b8ac60892e58312e7ab1b6cbb63
