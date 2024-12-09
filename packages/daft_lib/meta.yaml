@@ -1,0 +1,10 @@
+package:
+  name: daft_lib
+  version: 0.0.1
+  top-level:
+    - daft_lib
+source:
+  path: daft_lib_src
+# build:
+#   ldflags: |
+#     -lSDL2
