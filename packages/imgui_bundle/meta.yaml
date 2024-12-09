@@ -4,6 +4,12 @@ package:
   top-level:
     - imgui_bundle
 
+# Prod
+# source:
+#   url: https://github.com/pthom/imgui_bundle/releases/download/v1.6.1/imgui_bundle-v1.6.1-pyodide.tgz
+#   sha256: 7204ba4d1e7584dc632cc56874ddf12a08571b8ac60892e58312e7ab1b6cbb63
+
+# Devel version
 source:
-  url: https://github.com/pthom/imgui_bundle/releases/download/v1.6.1/imgui_bundle-v1.6.1-pyodide.tgz
-  sha256: 7204ba4d1e7584dc632cc56874ddf12a08571b8ac60892e58312e7ab1b6cbb63
+  path: /home/pascal/dvp/_Bundle/imgui_bundle
+
