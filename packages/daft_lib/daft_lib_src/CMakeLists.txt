@@ -35,9 +35,8 @@ litgen_find_nanobind()
 nanobind_add_module(daft_lib daft_lib.cpp)
 
 # Attempt to link SDL2 "a la cmake": this has no effect within pyodide / emscripten
-find_package(SDL2 REQUIRED)
-target_link_libraries(daft_lib PUBLIC SDL2::SDL2 SDL2::SDL2main)
-target_compile_options(daft_lib PUBLIC "-sUSE_SDL=2")
+# find_package(SDL2 REQUIRED)
+# target_link_libraries(daft_lib PUBLIC SDL2::SDL2 SDL2::SDL2main)
 
 # Link with SDL the emscripten way
 target_compile_options(daft_lib PUBLIC "-sUSE_SDL=2")
@@ -47,7 +46,7 @@ target_compile_options(daft_lib PUBLIC "-sRELOCATABLE=1")
 target_link_options(daft_lib PUBLIC "-sRELOCATABLE=1")
 
 set(ems_lib_path_pic ${EMSCRIPTEN_SYSROOT}/lib/wasm32-emscripten/pic)
-# target_link_directories(_imgui_bundle PUBLIC ${ems_lib_path_pic})
+# set(ems_lib_path_pic /home/pascal/dvp/_Bundle/_Pyodide/pyodide/packages/daft_lib/sdl_make_script)
 target_link_libraries(daft_lib PUBLIC ${ems_lib_path_pic}/libSDL2.a)
 
 
