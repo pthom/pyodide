@@ -4,9 +4,15 @@ package:
   top-level:
     - imgui_bundle
 
+# Production version
+# source:
+#   url: https://github.com/pthom/imgui_bundle/releases/download/v1.6.1/imgui_bundle-v1.6.1-pyodide.tgz
+#   sha256: 4c3aa0af67c0625ff1696dece5f1d811e871f2278b2a9aee4f643d53bf9a041d
+
+# Development version
 source:
-  url: https://github.com/pthom/imgui_bundle/releases/download/v1.6.1/imgui_bundle-v1.6.1-pyodide.tgz
-  sha256: 4c3aa0af67c0625ff1696dece5f1d811e871f2278b2a9aee4f643d53bf9a041d
+  path: /home/pascal/dvp/_Bundle/imgui_bundle
+
 build:
   # Trigger the build of SDL2 and libhtml5 libraries with -fPIC (aka -sRELOCATABLE=1, within emscripten)
   #   - This module needs to link with SDL2 and html5 in two ways: javascript and native library.
