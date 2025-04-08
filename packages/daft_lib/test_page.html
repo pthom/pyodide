@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <script src="pyodide_dist/pyodide.js"></script> <!-- Specify your own path here -->
+</head>
+<body>
+Pyodide test page <br>
+Open your browser console to see Pyodide output
+<script type="text/javascript">
+    async function main(){
+        let pyodide = await loadPyodide();
+
+        // Setup SDL, cf https://pyodide.org/en/stable/usage/sdl.html
+        //
+        // 1. Create a canvas element and set it as the canvas for SDL2
+        let sdl2Canvas = document.createElement("canvas");
+        sdl2Canvas.id = "canvas";
+        pyodide.canvas.setCanvas2D(sdl2Canvas);
+        // 2. SDL requires to enable an opt-in flag :
+        pyodide._api._skip_unwind_fatal_error = true;
+
+        await pyodide.loadPackage("micropip")
+        await pyodide.loadPackage("daft_lib")
+        pyodide.runPython(`
+            import sys
+            print(f"Python version: {sys.version}")
+
+            import daft_lib
+            daft_lib.dummy_sdl_call()
+
+        `);
+    }
+    main();
+</script>
+</body>
+</html>
